@@ -1,0 +1,51 @@
+<div class="devise-layout fedora-page">
+  <div class="container">
+    <div class="col-lg-4 col-lg-offset-4 content form-wrapper">
+    <h1>Sign up</h1>
+
+    <div class="form-group text-center">
+          <%= link_to "Sign Up with Facebook", user_omniauth_authorize_path(:facebook), class: 'btn btn-primary btn-block login-button' %>
+        </div>
+        <br>
+        <h1 class="text-center">OR</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render 'shared/devisemes' %>
+  
+  <div class="form-group">
+    <%= f.label :fullname %><br />
+    <%= f.text_field :fullname, autofocus: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: 'btn btn-primary btn-hg btn-block login-button' %>
+  </div>
+<% end %><br>
+
+<p class="text-center">
+          Already signed up?
+          <%= link_to "Login", new_user_session_path, class: 'login-button' %>
+        </p>
+
+
+  </div>
+</div>
+</div>

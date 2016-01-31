@@ -1,0 +1,40 @@
+<div class="devise-layout fedora-page">
+  <div class="container">
+    <div class="col-lg-4 col-lg-offset-4 content form-wrapper">
+    <h1>
+          Login To Account
+        </h1>
+        <div class="form-group text-center">
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: 'btn btn-primary btn-block login-button' %>
+        </div>
+        <br>
+        <h1 class="text-center">OR</h1>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-group" style="width: auto;">
+    <%= f.email_field :email, autofocus: true, class: 'form-control input-hg', placeholder: 'Email' %>
+  </div>
+
+  <div class="form-group" style="width: auto;">
+    <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'password' %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "Log in", class: 'btn btn-primary btn-hg btn-block login-button' %>
+  </div>
+  <h5 class="text-center">
+        <%= link_to "Forgot password?", new_password_path('user'), :class => "login-button" %>
+            </h5>
+  <br>
+<% end %>
+<p class="text-center">
+            Not yet a student?
+            <%= link_to "Sign Up", new_user_registration_path %>          </p>
+
+
+  </div>
+</div>
+</div>
+
+</div>

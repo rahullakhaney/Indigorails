@@ -22,7 +22,23 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# Bootstrap for better styling
+gem 'bootstrap-sass'
+# Devise for authentication
+gem 'devise'
+# Toastr for better notifications
+gem 'toastr-rails'
+#Gravatars
+gem 'gravatarify'
+#Facebook Authentication
+gem 'omniauth'
+gem 'omniauth-facebook'
+#Open emails on localhost
+gem 'letter_opener'
+#better print in console
+gem 'awesome_print'
 
+gem 'activeadmin', github: 'activeadmin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

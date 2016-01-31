@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Indigorails</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height, target-densitydpi=medium-dpi" />
+  <title>Complete Web Developer</title>
+<meta name="description" content="Learn the Complete Web &amp; App Development Course and transform yourself from Novice to Professional Job-Ready, Employable Developer." />
+<link rel="canonical" href="http://codebrew.io/" />
+<script src='http://fast.wistia.com/assets/external/E-v1.js'></script>
+<meta property="og:title" content="Codebrew - Zero to MVP in 15 Days" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://d2vvqscadf4c1f.cloudfront.net/jDXsxEfxTceAZ9KMYph2_Jquery.jpg" />
+<meta property="og:url" content="http://codebrew.io" />
+<meta name="site_title" content="Codebrew.IO - Zero to MVP in 15 Days" />
+<meta content='width=device-width,initial-scale=1.0,user-scalable=no' name='viewport'>
+
 </head>
 <body>
-
-<%= yield %>
+<%= render 'shared/header' %>
+<%= render 'shared/message' %>
+<div class='view-school'>
+	<%= yield %>
+	<%= render 'shared/footer' %>
+</div>
 
 </body>
 </html>

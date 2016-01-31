@@ -1,0 +1,6 @@
+<% if @user.image? %>
+<%= image_tag @user.image + "?type=large" %>
+<% else %>
+<%= gravatar_tag @user.email, :size => 200, html: { class: 'img-circle' } %>
+<% end %>
+<%= @user.fullname %>

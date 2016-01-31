@@ -1,0 +1,124 @@
+<header class=''>
+  <!-- Navbar -->
+  <div class="navbar navbar-fedora navbar-fixed-top is-at-top bs-docs-nav
+  <% if !user_signed_in? %>
+  is-not-signed-in
+<% end %>
+<% if current_page?(root_path) %>
+  is-homepage
+  <% end %>
+  " id='navbar' role='navigation'>
+  <div class='container'>
+    <div class='navbar-header'>
+      <button class='navbar-toggle' data-target='.navbar-header-collapse' data-toggle='collapse' type='button'>
+        <span class='sr-only'>
+          Toggle navigation
+        </span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <!-- Site logo -->
+
+      <%= link_to root_path, class: 'navbar-brand header-logo' do %>
+      <img src="//d6xfpzo6h49n1.cloudfront.net/thnGyVI_PizhX78VyH2McdoCIXA=/fit-in/0x60/https://d2vvqscadf4c1f.cloudfront.net/b4slNKdRsyhDDpWLYxN0_loqwego.png" alt="Complete Web Developer" srcset="//d6xfpzo6h49n1.cloudfront.net/-W10swA9wXQOouv8EJiaGYVVw5c=/fit-in/0x120/https://d2vvqscadf4c1f.cloudfront.net/b4slNKdRsyhDDpWLYxN0_loqwego.png 2x" />
+      <% end %>
+
+
+      <!-- Header Menu -->
+      <div class='collapse navbar-collapse navbar-header-collapse'>
+        <ul class='nav navbar-nav navbar-right'>
+
+
+          <!-- If more than 5 links, collapse the rest in a dropdown -->
+
+
+
+          <% if !user_signed_in? %>
+          <li>
+            <a class='fedora-navbar-link navbar-link' href='/courses'>
+              All Courses
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class='fedora-navbar-link navbar-link' href='http://completewebdeveloper.com/pages/contact-us' target='_blank'>
+              Contact
+            </a>
+
+          </li>
+          <li>
+            <%= link_to "Login", new_user_session_path, class: 'navbar-link fedora-navbar-link' %>
+          </li>
+          <li>
+            <%= link_to "Signup", new_user_registration_path, class: 'btn btn-primary pull-right btn-lg' %>
+          </li>
+
+          <% else %>
+
+          <li>
+            <a class='fedora-navbar-link navbar-link' href='/courses/enrolled' target=''>
+              My Courses
+            </a> 
+          </li>
+          <li>
+
+            <a class='fedora-navbar-link navbar-link' href='/courses' target='_blank'>
+              All Courses
+            </a>
+
+          </li>
+
+          <li>
+
+            <a class='fedora-navbar-link navbar-link' href='http://completewebdeveloper.com/pages/contact-us?sa=eyJ1c2VyX2lkIjo5OTUzNTUsImV4cGlyZXNfYXQiOjE0NTQyMzEyMDUsInNjaG9vbF9pZCI6MjUwODUsImF1dGhlbnRpY2F0aW9uX3Rva2VuIjoiWHpkb0pRVXNkdU5zWnB1Y1A5cUxuYkVqMU1CdlB2VFZWdyJ9--a1afb0a46623d92be1bd6c8ea2ab825b012e8191' target='_blank'>
+              Contact
+            </a>
+
+          </li>
+
+
+          <!-- If more than 5 links, collapse the rest in a dropdown -->
+
+
+
+          <!-- User Menu -->
+          <li class="dropdown">
+    <a aria-expanded="false" aria-haspopup="true" class="fedora-navbar-link navbar-link dropdown-toggle" data-toggle="dropdown">
+  <% if current_user.image? %>
+    <%= image_tag current_user.image, class: 'gravatar' %>
+  <% else %>
+    <%= gravatar_tag current_user.email, html: { class: 'gravatar' } %>
+  <% end %>
+</a>
+<ul class="dropdown-menu">
+  <li>
+    <%= link_to "Edit Profile", edit_user_registration_path %>
+  </li>
+  <li>
+    <a href="/current_user/subscriptions">
+      Manage Subscriptions
+    </a>
+  </li>
+  <li>
+    <a href="/current_user/credit_card">
+      Add / Change Credit Card
+    </a>
+  </li>
+  <li>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  </li>
+</ul>
+
+  </li>
+
+
+          </ul>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
