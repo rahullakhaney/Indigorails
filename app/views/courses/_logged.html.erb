@@ -1,0 +1,14 @@
+<h1><%= @course.name %></h1>
+
+<p><%= image_tag @course.image(:medium) %></p>
+<p> <%= @course.content %> </p>
+
+<ul>
+	<% @steps.each do |step| %>
+		<li>
+			<%= link_to [step.course, step] do %>
+				<%= step.note %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
