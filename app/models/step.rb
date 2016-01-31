@@ -1,4 +1,7 @@
 class Step < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :title, use: [:slugged, :finders]
+
   belongs_to :course
   validates :title, presence: true, length: { maximum: 50 }
 validates :video, presence: true

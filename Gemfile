@@ -50,6 +50,7 @@ gem 'active_skin'
 gem 'paperclip'
 gem 'redcarpet'
 gem 'coderay'
+gem 'friendly_id'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
