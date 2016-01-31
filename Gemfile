@@ -51,6 +51,7 @@ gem 'paperclip'
 gem 'redcarpet'
 gem 'coderay'
 gem 'friendly_id'
+gem 'active_admin-sortable_tree'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
